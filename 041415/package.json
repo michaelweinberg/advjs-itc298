@@ -1,0 +1,21 @@
+{
+  "name": "041415",
+  "version": "1.0.0",
+  "description": "April 14, 2015",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Node",
+    "Javascript"
+  ],
+  "author": "Michael",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^0.9.0",
+    "fs": "0.0.2",
+    "request": "^2.55.0",
+    "url": "^0.10.3"
+  }
+}

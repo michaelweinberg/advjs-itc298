@@ -4,7 +4,7 @@ var orders = require("./orders");
 var hapi = require("hapi");
 var server = new hapi.Server();
 server.connection({
-	port:8000
+	port:8080
 });
 
 server.start();

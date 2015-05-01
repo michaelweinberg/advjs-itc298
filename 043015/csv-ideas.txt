@@ -1,3 +1,0 @@
-meme-cache - key-value pairs
-NoSQL - redis
-google sheets api

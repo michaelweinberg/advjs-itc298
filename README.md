@@ -1,1 +1,1 @@
-### ITC 298 Advanced JavaScript 2015
+### ITC 298 Advanced JavaScript Spring 2015

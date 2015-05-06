@@ -46,7 +46,10 @@ server.route({
 		if (whichFortune <=fortunes.fortunes.length){
 			reply.view("fortune.html", {fortune:fortunes.fortunes[whichFortune]});
 		}else{
-		reply.view("fortune.html", {fortune:"Please enter a number between 0 and 11"});
+		// reply.view("fortune.html", {fortune:"Please enter a number between 0 and 11"});
+		var response = reply("redirecting...");
+		response.statusCode(302);
+		response.header("Location", "/fortune");
 		}
 	}
 		

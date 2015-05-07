@@ -54,12 +54,14 @@ server.route({
 	path: "/media/{x}",
 	handler: function(request, reply){
 	var page = request.params.x;
+	
 		// if (page <=fortunes.fortunes.length){
 			fs.readFile("media.json", "utf8", function(err,data){
 			reply.view("view", {
-			title: page.name
-				// classes: JSON.parse(data)
+			title: "Hello"
+			
 			});
+			
 		// }else{
 		// reply.view("fortune.html", {fortune:"Please enter a number between 0 and 11"});
 		// // var response = reply("redirecting...");

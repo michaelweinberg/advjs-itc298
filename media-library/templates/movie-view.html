@@ -1,0 +1,15 @@
+<h3>Here's some details on that item:</h3>
+<ul>
+	
+	{{#loop}}
+	<h2>{{title}}</h2>
+	<ul>{{#starring}}<li> {{.}}</li> {{/starring}}</ul>
+	<h3>Times</h3>
+	<ul>{{#times}}<li>{{.}}</li>{{/times}}</ul>
+	<span>Length: {{length}} minutes</span><br/>
+	<h3>Poster</h3>
+	<img src="{{poster}}" />
+	{{/loop}}<br/>
+	
+	
+</ul>

@@ -1,13 +1,13 @@
-[
+
 			
-					{
+				[	{
 					"name":"The Old Man and the Sea",
-					"pages":"5",
+					"pages":"20",
 					"link":"old-man-and-the-sea"
 					},
 					{
 					"name":"Ulysses",
-					"pages":"10 million",
+					"pages":"like 10 million",
 					"link":"ulysses"
 					},
 					{
@@ -20,6 +20,6 @@
 					"pages":"400",
 					"link":"lord-jim"
 					}
+					]
 			
-
-]
+			

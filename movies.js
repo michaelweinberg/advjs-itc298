@@ -37,9 +37,9 @@ server.route({
 
 server.route({
 	method:"GET",
-	path: "/media",
+	path: "/movies",
 	handler: function(request, reply){
-		fs.readFile("media.json", "utf8", function(err,data){
+		fs.readFile("movies.json", "utf8", function(err,data){
 			reply.view("other-stuff", {
 			title: "Media",
 			media: JSON.parse(data)
@@ -51,15 +51,15 @@ server.route({
 
 server.route({
 	method: "GET",
-	path: "/media/{index}",
+	path: "/movies/{index}",
 	handler: function(request, reply){
 	// var page = request.params.x;
 	
 		// if (page <=fortunes.fortunes.length){
-			fs.readFile("media.json", "utf8", function(err,data){
+			fs.readFile("movies.json", "utf8", function(err,data){
 				data = JSON.parse(data);
-				var item = data[request.params.index];
-			reply.view("view", {
+				var item = data[req.params.index];
+			reply.view("movie-view", {
 			title: "Hello",
 			info: item
 			});

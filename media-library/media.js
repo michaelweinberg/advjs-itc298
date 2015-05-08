@@ -20,7 +20,7 @@ server.route({
 	path: "/",
 	handler: function(request, reply){
 		reply.view("index",{
-			title:"home"
+			title:"Home"
 		});
 	}
 });
@@ -37,43 +37,64 @@ server.route({
 
 server.route({
 	method:"GET",
-	path: "/media",
+	path: "/movies",
 	handler: function(request, reply){
-		fs.readFile("media.json", "utf8", function(err,data){
-			reply.view("other-stuff", {
+		fs.readFile("media-items.json", "utf8", function(err,data){
+			var list = JSON.parse(data);
+			reply.view("movie-list", {
 			title: "Media",
-			media: JSON.parse(data)
+			movies: list.movies
 			});
 		});
-		
 	}
 });
 
 server.route({
 	method: "GET",
-	path: "/media/{index}",
+	path: "/movies/{index}",
 	handler: function(request, reply){
-	// var page = request.params.x;
-	
-		// if (page <=fortunes.fortunes.length){
-			fs.readFile("media.json", "utf8", function(err,data){
+			fs.readFile("media-items.json", "utf8", function(err,data){
 				data = JSON.parse(data);
-				var item = data[request.params.index];
-			reply.view("view", {
+				var item = data.movies[request.params.index];
+				console.log(item);
+			reply.view("movie-view", {
 			title: "Hello",
-			info: item
+			loop: item
 			});
-			
-		// }else{
-		// reply.view("fortune.html", {fortune:"Please enter a number between 0 and 11"});
-		// // var response = reply("redirecting...");
-		// // response.statusCode(302);
-		// // response.header("Location", "/fortune");
-		// }
 		});
-	}
-		
+	}	
 });
+
+server.route({
+	method:"GET",
+	path: "/books",
+	handler: function(request, reply){
+		fs.readFile("media-items.json", "utf8", function(err,data){
+			var list = JSON.parse(data);
+			reply.view("book-list", {
+			title: "Books",
+			books: list.books
+			});
+		});		
+	}
+});
+
+server.route({
+	method: "GET",
+	path: "/books/{index}",
+	handler: function(request, reply){
+			fs.readFile("media-items.json", "utf8", function(err,data){
+				data = JSON.parse(data);
+				var item = data.books[request.params.index];
+				console.log(item);
+			reply.view("book-view", {
+			title: "Hello",
+			loop: item
+			});
+		});
+	}	
+});
+
 
 
 

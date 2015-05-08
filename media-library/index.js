@@ -8,7 +8,7 @@ var fs = require("fs");
 var hapi = require("hapi");
 var handlebars = require("handlebars");
 var server = new hapi.Server();
-var db = require('./db');
+
 
 server.connection({
 	port:8000

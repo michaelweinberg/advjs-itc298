@@ -1,0 +1,9 @@
+<h3>Here's some stuff:</h3>
+<ul>
+	{{#albums}}
+	<li><a 
+			href="/albums/{{@index}}"
+			class="class-link">
+			{{name}} by {{artist}}</a>
+	{{/albums}}
+</ul>

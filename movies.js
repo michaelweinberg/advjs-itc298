@@ -18,7 +18,7 @@ server.start();
 server.route({
 	method: "GET",
 	path: "/",
-	handler: function(request, reply){
+	handler: function(request, reply){ 
 		reply.view("index",{
 			title:"home"
 		});

@@ -5,7 +5,9 @@
 	<h2>{{name}}</h2>
 	<h4>By {{author}}</h4>
 	<h3>Track Listing: </h3>
-	<ul>{{#times}}<li>{{.}}</li>{{/times}}</ul>
+	<span>Length: {{pages}} pages</span>
+	<h3>Cover</h3>
+	<img src="{{cover}}" alt="{{name}}" />
 	{{/loop}}<br/>
 	
 	

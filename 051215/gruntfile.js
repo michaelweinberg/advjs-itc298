@@ -2,11 +2,11 @@
 
 module.exports = function(grunt){
 	
-	grunt.registerTask("hello",
-	function(){
-	console.log("hello from grunt");
-	grunt.file.write("build/test.txt", "This file is written sync");
-	});
+	// grunt.registerTask("hello",
+	// function(){
+	// console.log("hello from grunt");
+	// grunt.file.copy("src/images/**/*.png", "build/images");
+	// });
 	
 
 	grunt.registerTask("hi", ["hello"]);
@@ -14,12 +14,23 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks("grunt-contrib-watch");
 	grunt.loadNpmTasks("grunt-concurrent");
 	grunt.loadNpmTasks("grunt-nodemon");
+	grunt.loadNpmTasks("grunt-contrib-copy");
 	
+
 	grunt.registerTask("default", ["autoprefixer","concurrent"]);
 	grunt.initConfig({
+		copy:{
+			 files: {
+			    cwd: 'src/images/',  // set working folder / root to copy
+			    src: '**',           // copy all files and subfolders
+			    dest: 'build/images',    // destination folder
+			    expand: true           // required when using cwd
+  }
+		},
+		
 		concurrent:{
 			dev:{
-				tasks:["watch","nodemon"],
+				tasks:["watch","nodemon","copy"],
 				options:{
 					logConcurrentOutput:true
 				}
@@ -44,7 +55,12 @@ module.exports = function(grunt){
 			template:{
 				files:"**/*.html",
 				tasks:["hello"]
+			},
+			images:{
+				files:"src/images/**",
+				tasks:["copy"]
 			}
+			
 		},
 		autoprefixer: {
 			dev: {

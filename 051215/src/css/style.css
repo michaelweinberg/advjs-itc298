@@ -1,6 +1,6 @@
 body {
 	transition:transform 1s linear;
-	transform:rotateZ(30deg);
+	
 	box-sizing:border-box;
 	display:flex;
 	background-color:#bababa;

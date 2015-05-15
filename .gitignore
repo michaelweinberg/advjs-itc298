@@ -29,6 +29,9 @@ node_modules
 #any local builds
 build
 
+#images
+images
+
 .DS_Store
 
 .tmp

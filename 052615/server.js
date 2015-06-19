@@ -27,7 +27,7 @@ server.route({
 		if(!req.state.user){
 			return reply.redirect("/login");
 		}
-		db.get("SELECT * FROM auth WHERE user = $user",{
+		db.get("SELECT * FROM auth WHERE username = $user",{
 			$user:req.state.user
 		},function(err,result){
 			console.log(err);
